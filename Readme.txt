@@ -4,15 +4,15 @@ Donate link: http://mikestumpf.com/portfolio/wordpress-reading-list-plugin/
 Tags: reading-list, books, custom-post, plugin, posts, images, links
 Requires at least: 3.0.1
 Tested up to: 3.6
-Stable tag: 3.6
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-**WP Reading List** (or, **WPRL**) is a plugin designed to help organize and display books, magazines, articles, and or anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.
+**WP Reading List** is a plugin designed to help organize and display books, magazines, articles, and anything else that you have read lately. 
 
 == Description ==
 
-**WP Reading List** (or, **WPRL**) is a plugin designed to help organize and display books, magazines, articles, and or anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.  The plugin comes bundled with three existing templates, complete with easily customizable CSS.
+**WP Reading List** (or, **WPRL**) is a plugin designed to help organize and display books, magazines, articles, and anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.  The plugin comes bundled with three existing templates, complete with easily customizable CSS.
 
 == Installation ==
 
