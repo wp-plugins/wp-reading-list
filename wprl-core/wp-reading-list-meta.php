@@ -18,7 +18,7 @@ function wprl_add_post_meta_boxes() {
 
 	add_meta_box(
 		'wprl-link', /* Unique ID */
-		esc_html__( 'work URL', 'wp-readinglist' ), /* Title */
+		esc_html__( 'Work URL', 'wp-readinglist' ), /* Title */
 		'wprl_pages_meta_link',	 /* Callback function */
 		'works', /* Add metabox to our custom post type */
 		'side',	 /* Context */
