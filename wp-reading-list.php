@@ -2,8 +2,8 @@
 /*
 Plugin Name: WP Reading List
 Plugin URI: http://mikestumpf.com/portfolio/wordpress-reading-list-plugin/
-Description: WP Reading List is designed to help organize and display books, magazines, articles, and anything else that you have read lately. 
-Version: 1.0
+Description: WP Reading List is a plugin designed to help organize and display books, magazines, articles, and anything else that you have read lately. 
+Version: 1.1
 Author: Mike Stumpf
 Author URI: http://mikestumpf.com
 License: GPL2
@@ -27,11 +27,12 @@ License: GPL2
 
 defined( 'ABSPATH' ) OR exit;
 
-//Load the plugin functions
+/*Load the plugin functions*/
 require 'wp-reading-list-functions.php';
 
-//For uninstalling the plugin
+/*For uninstalling the plugin
 register_uninstall_hook(__FILE__, 'delete_books');
+*/
 
  /*
  *End of File
