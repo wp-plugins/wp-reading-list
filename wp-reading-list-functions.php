@@ -221,21 +221,24 @@ function wp_reading_list_redirect() {
 		if (is_singular('works'))
 		{
 			$return_template =  dirname( __FILE__ ) . '/wprl-theme/single-works.php';
+			 wprl_theme_redirect($return_template);
 		}
 		else 
 		{
 			$return_template =  dirname( __FILE__ ) . '/wprl-theme/archive-works.php';
+			wprl_theme_redirect($return_template);
 		}
 	}
     	elseif ($wp_query->query_vars["taxonomy"] == 'work-author') 
     	{
             $return_template = dirname( __FILE__ ) . '/wprl-theme/taxonomy-work-author.php';
+            wprl_theme_redirect($return_template);
         }
         elseif ($wp_query->query_vars["taxonomy"] == 'work-type') 
         {
             $return_template = dirname( __FILE__ ) . '/wprl-theme/taxonomy-work-type.php';
+            wprl_theme_redirect($return_template);
         } 
-        wprl_theme_redirect($return_template);
 }
 
 function wprl_theme_redirect($url) {
@@ -247,10 +250,8 @@ function wprl_theme_redirect($url) {
         $wp_query->is_404 = true;
     }
 }
-if (!is_admin())
-{
-	add_action("template_redirect", 'wp_reading_list_redirect');
-}
+
+add_action("template_redirect", 'wp_reading_list_redirect');
 
 function wprl_custom_excerpt($limit) {
       $excerpt = explode(' ', get_the_content(), $limit);

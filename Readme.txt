@@ -4,7 +4,7 @@ Donate link: http://mikestumpf.com/portfolio/wordpress-reading-list-plugin/
 Tags: reading-list, works, custom-post, plugin, posts, images, links, reading list, books, magazines, articles, journals, reading
 Requires at least: 3.0.1
 Tested up to: 3.7.1
-Stable tag: 2.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,9 @@ Yes. Think of "works" as specialized "posts" and similarly for "authors" & "type
 
 == Changelog ==
 
+= 2.0.1 =
+* Fixed minor redirect bug
+
 = 2.0 =
 * Fixed bug which removed commenting from a site when installed
 * Fixed permalink issue so the plugin now displays regardless of permalink setting
@@ -97,6 +100,9 @@ Yes. Think of "works" as specialized "posts" and similarly for "authors" & "type
 * First Stable release
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+Fixed minor redirect bug in 2.0
 
 = 2.0 =
 Fixed permalink issue and commenting bug
