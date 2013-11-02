@@ -35,12 +35,12 @@ get_header(); ?>
 															{
 																_e(', ');
 															}
-															if ($wprl_options['author_link'])
+															if ($wprl_options['show_author_link'])
 															{ ?>
 																<a href="<?php _e(site_url());?>/reading-list/author/<?php _e($name);?>">
 															<?php }
 															_e(trim($author->name));
-															if ($wprl_options['author_link'])
+															if ($wprl_options['show_author_link'])
 															{ ?>
 																</a>
 															<?php }
