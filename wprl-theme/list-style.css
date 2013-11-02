@@ -11,7 +11,7 @@
 /* HTML5 display-role reset for older browsers */
 #content article, #content header {display: block!important;}
 /*End reset*/
-#content .entry-meta {display:inline-block!important;width: auto!important;vertical-align:text-bottom!important;margin:0 0 20px 10px!important;}
+#content .entry-meta {display:inline-block!important;width: auto!important;vertical-align:text-bottom!important;margin:0 0 20px 10px!important;max-width:60%!important;}
 #content .entry-meta p {margin-bottom:0!important;}
 #content article {word-wrap:break-word;}
 #content .wp-post-image {max-width:none!important;}
@@ -23,3 +23,4 @@
 #content .entry-title {font-size:200%;font-weight:bold;}
 #primary, .site-content, #content .entry-content {width:100%!important;}
 #content .wprl-book-links.nav-links {font-size:125%;font-weight:bold;margin-bottom:1em!important;}
+#content .wprl-excerpt {margin-bottom: 20px!important;}

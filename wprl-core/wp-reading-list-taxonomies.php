@@ -25,7 +25,29 @@ function wprl_custom_tax() {
 		'show_ui' => true,
 		'show_admin_column' => true,
 		'query_var' => true,
-		'rewrite' => array('slug' => 'work-author'),
+		'rewrite' => array('slug' => 'reading-list/author', 'with_front' => false),
+	));
+		$labels = array(
+		'name' => __('Work Type/s', 'wp-readinglist'),
+		'singular_name' => __('Type', 'wp-readinglist'),
+		'search_items' => __('Search Types', 'wp-readinglist'),
+		'all_items' => __('All Types', 'wp-readinglist'),
+		'edit_item' => __('Edit Type', 'wp-readinglist'), 
+		'update_item' => __('Update Type', 'wp-readinglist'),
+		'add_new_item' => __('Add New Type', 'wp-readinglist'),
+		'new_item_name' => __('New Work Type', 'wp-readinglist'),
+		'separate_items_with_commas' => __('Separate types with commas', 'wp-readinglist'),
+		'choose_from_most_used' => __('Choose from the most used types', 'wp-readinglist'),
+		'menu_name' => __('Work Types', 'wp-readinglist'),
+	); 	
+		
+	register_taxonomy('work-type', array( 'works'), array(
+		'hierarchical' => false,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'reading-list/type', 'with_front' => false),
 	));
 }
 
@@ -59,7 +81,7 @@ function wprl_custom_post() {
 		'menu_position' => 20,
 		'supports' => array('title', 'thumbnail', 'editor' , 'revisions'),
 		'has_archive' => true,
-		'rewrite' => array('slug' => 'reading-list')
+		'rewrite' => array('slug' => 'reading-list', 'with_front' => false)
 	);
 	register_post_type('works', $args);
 }

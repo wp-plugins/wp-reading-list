@@ -198,7 +198,7 @@ function wprl_settings_author() {
 /*Show author link setting  */
 function wprl_settings_author_link() {
      	$wprl_options = get_option('wprl_plugin_options');?>
-     	<input type="checkbox" id="wprl-options-author-link" name="wprl_plugin_options[author_link]"<?php if($wprl_options['author_link']){_e('checked="checked"');} ?> value="author-link"/>
+     	<input type="checkbox" id="wprl-options-author-link" name="wprl_plugin_options[show_author_link]"<?php if($wprl_options['show_author_link']){_e('checked="checked"');} ?> value="author-link"/>
 <?php }
 
 /*Show cover image url setting  */
@@ -231,6 +231,25 @@ function wprl_settings_post_author(){
      	<input type="checkbox" id="wprl-options-post-author" name="wprl_plugin_options[post_author]"<?php if($wprl_options['post_author']){_e('checked="checked"');} ?> value="show-post-author"/>
      	<?php _e('<p class="margin">(If you wish to enable this, it is recommended that you also turn on the "Display on Whole Site" setting)</p>');
 }
+
+/*Show list excerpt  */
+function wprl_settings_show_list_excerpt() {
+     	$wprl_options = get_option('wprl_plugin_options');?>
+     	<input type="checkbox" id="wprl-options-list-excerpt" name="wprl_plugin_options[show_list_excerpt]"<?php if($wprl_options['show_list_excerpt']){_e('checked="checked"');} ?> value="show-list-excerpt"/>
+<?php }
+
+/*Show work type  */
+function wprl_settings_show_work_type() {
+     	$wprl_options = get_option('wprl_plugin_options');?>
+     	<input type="checkbox" id="wprl-options-work-type" name="wprl_plugin_options[show_work_type]"<?php if($wprl_options['show_work_type']){_e('checked="checked"');} ?> value="show-work-type"/>
+<?php }
+
+/*Show work type link  */
+function wprl_settings_show_type_link() {
+     	$wprl_options = get_option('wprl_plugin_options');?>
+     	<input type="checkbox" id="wprl-options-type-link" name="wprl_plugin_options[show_type_link]"<?php if($wprl_options['show_type_link']){_e('checked="checked"');} ?> value="show-type-link"/>
+<?php }
+
 
 /*Delete items setting */
 function wprl_settings_delete() {
@@ -274,6 +293,7 @@ function wprl_settings_padding(){
         <input type="text" id="wprl-options-padding" name="wprl_plugin_options[padding]" size="4" value="<?php _e($wprl_options['padding']);?>" onchange="paddingCheck()" />
 	<?php _e('%', 'wprl_options' );
 }
+
 
 /*Validate checkboxes helper*/
 function wprl_options_validate_helper($setting, $input){
@@ -326,7 +346,10 @@ function wprl_options_validate($input) {
          	$valid_input['show_post_date'] = wprl_options_validate_helper('show_post_date', $input);
          	$valid_input['show_page_nums'] = wprl_options_validate_helper('show_page_nums', $input);
          	$valid_input['show_author'] = wprl_options_validate_helper('show_author', $input);
-			$valid_input['author_link'] = wprl_options_validate_helper('author_link', $input);
+         	$valid_input['show_list_excerpt'] = wprl_options_validate_helper('show_list_excerpt', $input);
+         	$valid_input['show_work_type'] = wprl_options_validate_helper('show_work_type', $input);
+         	$valid_input['show_type_link'] = wprl_options_validate_helper('show_type_link', $input);
+		$valid_input['show_author_link'] = wprl_options_validate_helper('show_author_link', $input);
          	$valid_input['post_author'] = wprl_options_validate_helper('post_author', $input);
          	$valid_input['list_image'] = wprl_options_validate_helper('list_image', $input);
          	$valid_input['show_url'] = wprl_options_validate_helper('show_url', $input);
@@ -376,12 +399,15 @@ function register_wprl_settings() {
 	add_settings_section('wprl_settings_list_layout', 'List', '', 'wprl_options');
 	add_settings_field('wprl_settings_list_size', 'Number of List Items', 'wprl_settings_list_size', 'wprl_options', 'wprl_settings_list_layout');
 	add_settings_field('wprl_settings_list_image', 'Show Cover Image', 'wprl_settings_list_image', 'wprl_options', 'wprl_settings_list_layout');
+	add_settings_field('wprl_settings_show_list_excerpt', 'Show Item Excerpt', 'wprl_settings_show_list_excerpt', 'wprl_options', 'wprl_settings_list_layout');
 	add_settings_field('wprl_settings_size', 'Cover Size', 'wprl_settings_size', 'wprl_options', 'wprl_settings_list_layout');
 	add_settings_section('wprl_settings_layout_dispay', 'Display', '', 'wprl_options');
 	add_settings_field('wprl_settings_show_url', 'Show Cover Image Link', 'wprl_settings_show_url', 'wprl_options', 'wprl_settings_layout_dispay');
 	add_settings_field('wprl_settings_work_link', 'Show Link to Single Post', 'wprl_settings_work_link', 'wprl_options', 'wprl_settings_layout_dispay');	
 	add_settings_field('wprl_settings_author', 'Show Item Author/s', 'wprl_settings_author', 'wprl_options', 'wprl_settings_layout_dispay');
-	add_settings_field('wprl_settings_author_link', 'Show Author/s Link', 'wprl_settings_author_link', 'wprl_options', 'wprl_settings_layout_dispay');
+	add_settings_field('wprl_settings_author_link', 'Show Author/s Archive', 'wprl_settings_author_link', 'wprl_options', 'wprl_settings_layout_dispay');
+	add_settings_field('wprl_settings_show_work_type', 'Show Item Type', 'wprl_settings_show_work_type', 'wprl_options', 'wprl_settings_layout_dispay');
+	add_settings_field('wprl_settings_show_type_link', 'Show Type/s Archive', 'wprl_settings_show_type_link', 'wprl_options', 'wprl_settings_layout_dispay');
 	add_settings_field('wprl_settings_post_author', 'Show Post Author', 'wprl_settings_post_author', 'wprl_options', 'wprl_settings_layout_dispay');
 	add_settings_field('wprl_settings_date', 'Show Date Published', 'wprl_settings_date', 'wprl_options', 'wprl_settings_layout_dispay');
 	add_settings_field('wprl_settings_page_nums', 'Show Page Numbers', 'wprl_settings_page_nums', 'wprl_options', 'wprl_settings_layout_dispay');

@@ -57,7 +57,7 @@ get_header(); ?>
 							</h1>
 							<?php edit_post_link( __( 'Edit'), '<span class="edit-link">', '</span>' ); ?>
 							<div class="entry-summary">
-								<?php the_excerpt(); ?>
+								<?php echo '<p class="wprl-excerpt">'.wprl_custom_excerpt(110).'</p>'; ?>
 							</div><!-- .entry-summary -->
 					</header><!-- .entry-header -->
 				</article><!-- #post -->

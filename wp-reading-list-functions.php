@@ -38,8 +38,11 @@ function wprl_default_options() {
 		'show_url' => true,
 		'show_single_work' => true,
 		'list_image' => true,
-		'author_link' => true,
-		'version' => '1.3',
+		'show_author_link' => true,
+		'version' => '2.0',
+		'show_list_excerpt' => true,
+		'show_work_type' => true,
+		'show_type_link' => true,
     	);
     	return $options;
 }
@@ -47,7 +50,7 @@ function wprl_default_options() {
 /*Initialize wprl options */
 global $wprl_options;
 $wprl_options = get_option('wprl_plugin_options');
-if (false == $wprl_options || $wprl_options['version'] != '1.3') 
+if (false == $wprl_options || $wprl_options['version'] != '2.0') 
 {
 	$wprl_options = wprl_default_options();
 }
@@ -57,30 +60,6 @@ update_option('wprl_plugin_options', $wprl_options);
 if (is_admin()){
 	require 'wprl-admin/wp-reading-list-admin.php';
 }
-
-/*Add plugin templates for displaying works and works archive */
-function wprl_custom_templates($template) {
-	$wprl_options = get_option('wprl_plugin_options');
-	if (is_singular('works')){
-		$template =  dirname( __FILE__ ) . '/wprl-theme/single-work.php';
-		return $template;
-	}
-	elseif (is_post_type_archive('works') && $wprl_options['layout']=='grid') {
-		$template =  dirname( __FILE__ ) . '/wprl-theme/grid-archive-works.php';
-		return $template;
-    	}
-    	elseif (is_post_type_archive('works') && $wprl_options['layout']=='list') {
-		$template =  dirname( __FILE__ ) . '/wprl-theme/list-archive-works.php';
-		return $template;
-    	}
-    	elseif (!is_admin() && is_tax('work-author'))
-    	{
-    		$template =  dirname( __FILE__ ) . '/wprl-theme/taxonomy-work-author.php';
-		return $template;
-    	}
-}
-add_filter('single_template', 'wprl_custom_templates') ;
-add_filter('archive_template', 'wprl_custom_templates');
 
 /* queue different files depending on the layout chosen and the location */
 function wprl_layout_query($query){
@@ -142,7 +121,7 @@ if (!function_exists('wprl_styles'))
 		{
 			wp_enqueue_style('reading-list-single-style', plugins_url('/wprl-theme/single-style.css', __FILE__));
 		}
-		elseif (!is_admin() && is_tax('work-author'))
+		elseif (!is_admin() && is_tax('work-author') || is_tax('work-type'))
 		{
 			wp_enqueue_style('reading-list-single-style', plugins_url('/wprl-theme/taxonomy-style.css', __FILE__));
 		}
@@ -231,6 +210,73 @@ function post_author_column( $columns ) {
 }
 
 add_filter('manage_edit-works_sortable_columns', 'post_author_column');
+
+
+//Template fallback
+function wp_reading_list_redirect() {
+	global $wp_query;
+    	$wprl_options = get_option('wprl_plugin_options');
+	if ($wp_query->query_vars["post_type"] == 'works')
+	{
+		if (is_singular('works'))
+		{
+			$return_template =  dirname( __FILE__ ) . '/wprl-theme/single-works.php';
+		}
+		else 
+		{
+			$return_template =  dirname( __FILE__ ) . '/wprl-theme/archive-works.php';
+		}
+	}
+    	elseif ($wp_query->query_vars["taxonomy"] == 'work-author') 
+    	{
+            $return_template = dirname( __FILE__ ) . '/wprl-theme/taxonomy-work-author.php';
+        }
+        elseif ($wp_query->query_vars["taxonomy"] == 'work-type') 
+        {
+            $return_template = dirname( __FILE__ ) . '/wprl-theme/taxonomy-work-type.php';
+        } 
+        wprl_theme_redirect($return_template);
+}
+
+function wprl_theme_redirect($url) {
+    global $post, $wp_query;
+    if (have_posts()) {
+        include($url);
+        die();
+    } else {
+        $wp_query->is_404 = true;
+    }
+}
+if (!is_admin())
+{
+	add_action("template_redirect", 'wp_reading_list_redirect');
+}
+
+function wprl_custom_excerpt($limit) {
+      $excerpt = explode(' ', get_the_content(), $limit);
+      if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'...';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+      $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+      return $excerpt;
+    }
+
+    function content($limit) {
+      $content = explode(' ', get_the_content(), $limit);
+      if (count($content)>=$limit) {
+        array_pop($content);
+        $content = implode(" ",$content).'...';
+      } else {
+        $content = implode(" ",$content);
+      } 
+      $content = preg_replace('/\[.+\]/','', $content);
+      $content = apply_filters('the_content', $content); 
+      $content = str_replace(']]>', ']]&gt;', $content);
+      return $content;
+}
 
 /*
 *End of File
