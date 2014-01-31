@@ -12,6 +12,7 @@ get_header(); ?>
 		</h1>
 		<?php if (have_posts()) 
 		{
+			$posts = $wp_query->found_posts;
 			if ($wprl_options['layout'] == 'grid')
 			{
 				$rows = $wprl_options['grid_rows'];
@@ -70,8 +71,10 @@ get_header(); ?>
 							} ?>
 						</header><!-- .entry-header -->
 					</article><!-- #post-<?php the_ID(); ?> -->
-					<?php if ($i%$width === 0 || $post_counter == count($posts))
+					<?php 
+					if ($i%$width === 0 || $post_counter === (int)$posts)
 					{
+						
 						$metainfo[] = get_post(); ?>
 						<div class="spacer2">&nbsp;</div>
 						<?php foreach ($metainfo as $metapost)
@@ -131,22 +134,22 @@ get_header(); ?>
 										<?php }
 										if ($wprl_options['show_page_nums'] && get_post_meta($post->ID,'wprl_pages',true))
 										{ ?>
-											<p id="work-pages">Pages: <?php _e(get_post_meta($metapost->ID,'wprl_pages',true));?></p>
+											<p id="work-pages"><?php _e('Pages:', 'wp_reading_list'); _e(get_post_meta($metapost->ID,'wprl_pages',true));?></p>
 										<?php } 
 										if ($wprl_options['show_post_date'])
 										{ ?>
-											<p id="work-time">Posted on: <?php _e(get_the_time(get_option('date_format'), $metapost->ID)); ?></p>
+											<p id="work-time"><?php _e('Posted on:', 'wp_reading_list'); _e(get_the_time(get_option('date_format'), $metapost->ID)); ?></p>
 										<?php } 
 										if ($wprl_options['post_author'])
 										{ ?>
-											<p id="post-author">Posted by: <a href="<?php _e(site_url());?>/author/<?php _e(the_author_meta('user_nicename', $metapost->post_author));?>"><?php _e(the_author_meta('user_nicename', $metapost->post_author));?></a></p>
+											<p id="post-author"><?php _e('Posted by:', 'wp_reading_list');?> <a href="<?php _e(site_url());?>/author/<?php _e(the_author_meta('user_nicename', $metapost->post_author));?>"><?php _e(the_author_meta('user_nicename', $metapost->post_author));?></a></p>
 										<?php }
 										if ($wprl_options['show_work_type'])
 										{ ?>
 											<p id="work-type"><?php
 												if ($typelist = get_the_terms($metapost->ID, 'work-type'))
 												{
-												_e('Type: ');
+												_e('Type: ', 'wp_reading_list');
 												$j=1;
 												$k=0;
 												$numItems = count($typelist);
@@ -246,10 +249,9 @@ get_header(); ?>
 								</a>
 							<?php } 
 							if ($wprl_options['show_list_excerpt'])
-								{
+							{
 									echo '<p class="wprl-excerpt">'.wprl_custom_excerpt(55).'</p>';
-								}?>
-							
+							}?>
 							<table>
 								<tr>
 									<td>
@@ -258,38 +260,38 @@ get_header(); ?>
 											<span id="work-author"><?php if ($authorlist = get_the_terms($post->ID, 'work-author'))
 											{
 												_e('By: ');
-													$j=1;
-													$k=0;
-													$numItems = count($authorlist);
-													foreach($authorlist as $author)
-														{	
-															$name = str_replace(' ', '-', trim($author->name)) .'/';
-															if (++$k === $numItems && $numItems != 1)
-															{
-																_e(' & ');
-															}
-															elseif ($j!=1)
-															{
-																_e(', ');
-															}
-															if ($wprl_options['show_author_link'])
-															{ ?>
-																<a href="<?php _e(site_url());?>/reading-list/author/<?php _e($name);?>">
-															<?php }
-															_e(trim($author->name));
-															if ($wprl_options['show_author_link'])
-															{ ?>
-																</a>
-															<?php }
-														$j++;
+												$j=1;
+												$k=0;
+												$numItems = count($authorlist);
+												foreach($authorlist as $author)
+													{	
+														$name = str_replace(' ', '-', trim($author->name)) .'/';
+														if (++$k === $numItems && $numItems != 1)
+														{
+															_e(' & ');
 														}
+														elseif ($j!=1)
+														{
+															_e(', ');
+														}
+														if ($wprl_options['show_author_link'])
+														{ ?>
+															<a href="<?php _e(site_url());?>/reading-list/author/<?php _e($name);?>">
+														<?php }
+														_e(trim($author->name));
+														if ($wprl_options['show_author_link'])
+														{ ?>
+															</a>
+														<?php }
+													$j++;
+												}
 											}?></span>
 										<?php } ?>
 									</td>
 									<td>
 										<?php if ($wprl_options['show_post_date'] && get_the_date())
 										{ ?>
-											<span id="work-time">Posted on: <?php _e(get_the_date(get_option('date_format'))); ?></span>
+											<span id="work-time"><?php _e('Posted on:', 'wp_reading_list');_e(get_the_date(get_option('date_format'))); ?></span>
 										<?php } ?>	
 									</td>
 								</tr>
@@ -297,13 +299,13 @@ get_header(); ?>
 									<td>
 										<?php if ($wprl_options['show_page_nums'] && get_post_meta($post->ID,'wprl_pages',true))
 										{ ?>
-											<span id="work-pages">Pages: <?php _e(get_post_meta($post->ID,'wprl_pages',true));?></span>
+											<span id="work-pages"><?php _e('Pages:', 'wp_reading_list'); _e(get_post_meta($post->ID,'wprl_pages',true));?></span>
 										<?php } ?>
 									</td>
 									<td>
 										<?php if ($wprl_options['post_author'])
 										{ ?>
-											<span id="post-author">Posted by: <a href="<?php _e(site_url());?>/author/<?php _e(the_author_meta('user_nicename', $post->post_author));?>"><?php _e(the_author_meta('user_nicename', $post->post_author));?></a></span>
+											<span id="post-author"><?php _e('Posted by: ', 'wp_reading_list');?> <a href="<?php _e(site_url());?>/author/<?php _e(the_author_meta('user_nicename', $post->post_author));?>"><?php _e(the_author_meta('user_nicename', $post->post_author));?></a></span>
 										<?php } ?>	
 									</td>		
 								</tr>
@@ -354,11 +356,11 @@ get_header(); ?>
 				<div class="wprl-work-links nav-links" style="margin-left:<?php _e($wprl_options['css_margin_left'])?>%!important;">
 					<?php posts_nav_link(); ?>			
 				</div><!-- .nav-links -->
-			</nav>
+			</nav>         
 		<?php } 
 		else{ ?>
 			<h3 class="entry-header">No Results</h3>
 		<?php } ?>
 	</div><!-- #content -->
 </div><!-- #primary -->
-<?php get_footer(); ?>
+<?php get_footer(); ?>
