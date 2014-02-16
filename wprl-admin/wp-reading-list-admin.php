@@ -48,9 +48,9 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_overview',
 
-	        'title'	=> _e('WPRL Overview'),
+	        'title'	=> __('WPRL Overview', 'wp_reading_list'),
 
-	        'content'	=> '<p>' . _e('<b>WP Reading List</b> (or, <b>WPRL</b>)is a plugin designed to help organize and display books, magazines, articles, and or anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.<br/><br/>Please select any of the other tabs to read more about the various administration functions available in this plugin.') . '</p>',
+	        'content'	=> '<p>' . __('<b>WP Reading List</b> (or, <b>WPRL</b>)is a plugin designed to help organize and display books, magazines, articles, and or anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.<br/><br/>Please select any of the other tabs to read more about the various administration functions available in this plugin.', 'wp_reading_list') . '</p>',
 
 	    ) );    
 
@@ -58,9 +58,9 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_layout',
 
-	        'title'	=> _e('Layout'),
+	        'title'	=> __('Layout'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 			<b>Available Layouts</b>: There are two layouts available, "grid" and "list". "Grid" is a layout which emphasizes cover images is intended to be more visually appealing.  "List" is a layout which displays Reading List materials more like traditional posts, with one item per line.
 
@@ -78,7 +78,7 @@ function wprl_add_help_tab() {
 
 			<br/><br/>
 
-			<b>Cover Image Spacing</b>: This option allows you to specify how far apart you want your layout items, left-right space for the grid layout and up-down space for the list layout.  <br/>Range: 1-10.') . '</p>',
+			<b>Cover Image Spacing</b>: This option allows you to specify how far apart you want your layout items, left-right space for the grid layout and up-down space for the list layout.  <br/>Range: 1-10.', 'wp_reading_list') . '</p>',
 
 	    ) );
 
@@ -86,9 +86,9 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_grid',
 
-	        'title'	=> _e('Grid'),
+	        'title'	=> __('Grid', 'wp_reading_list'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 			<b>Grid Width</b>: This option sets the number of Reading List items on each line in the grid layout.
 
@@ -98,7 +98,7 @@ function wprl_add_help_tab() {
 
 			<b>Number of Grid Rows</b>: This option sets how many rows of Reading List items are displayed in the grid layout.
 
-			<br/>Range: 1-10.') . '</p>',
+			<br/>Range: 1-10.', 'wp_reading_list') . '</p>',
 
 	    ) );
 
@@ -106,9 +106,9 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_list',
 
-	        'title'	=> _e('List'),
+	        'title'	=> __('List', 'wp_reading_list'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 			<b>Number of List Items</b>: This is similar to the option for showing the number of blog posts in the "General Settings" page.  This allows you to have a different number of Reading List items than the rest of the site.
 
@@ -124,7 +124,7 @@ function wprl_add_help_tab() {
 
 			<br/>Range: 60-600.
 
-	        ') . '</p>',
+	        ', 'wp_reading_list') . '</p>',
 
 	    ) );
 
@@ -132,9 +132,9 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_display',
 
-	        'title'	=> _e('Display'),
+	        'title'	=> __('Display', 'wp_reading_list'),
 
-	        'content'	=> '<p>' . _e('*These options will affect both the archive layouts and the single item layout.
+	        'content'	=> '<p>' . __('*These options will affect both the archive layouts and the single item layout.
 
 			<br/><br/>
 
@@ -142,7 +142,7 @@ function wprl_add_help_tab() {
 
 			<br/><br/>
 
-			<b>Show Link to Single Postb>: Check this option if you want to show a link to the single post view.  If you only wish to show the list of works you read, like if you choose not to write anything in the post&apos;s content, this is a good option as it will only show the grid or list layout.
+			<b>Show Link to Single Post</b>: Check this option if you want to show a link to the single post view.  If you only wish to show the list of works you read, like if you choose not to write anything in the post&apos;s content, this is a good option as it will only show the grid or list layout.
 
 			<br/><br/>
 
@@ -158,7 +158,7 @@ function wprl_add_help_tab() {
 
 			<br/>*If you enable this, it is recommended that you also turn on the "Display on Whole Site" setting, otherwise a user&apos;s Reading List items will not show up in searches with regular posts by the same user.
 
-	        ') . '</p>',
+	        ', 'wp_reading_list') . '</p>',
 
 	    ) );
 
@@ -166,9 +166,9 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_general',
 
-	        'title'	=> _e('General'),
+	        'title'	=> __('General', 'wp_reading_list'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 			<b>Display on Whole Site</b>: Check this option if you wish to show Reading List items in your blog&apos;s feed and search results.  This also enables Reading List items to show up if searching for a specific user&apos;s content.
 
@@ -178,7 +178,7 @@ function wprl_add_help_tab() {
 
 			<br/><br/>
 
-			<b>Layout Header</b>: Use this option to change what the header of the grid or list layout view is called.') . '</p>',
+			<b>Layout Header</b>: Use this option to change what the header of the grid or list layout view is called.', 'wp_reading_list') . '</p>',
 
 	    ) );
 
@@ -186,9 +186,13 @@ function wprl_add_help_tab() {
 
 	        'id'	=> 'wprl_help_admin',
 
-	        'title'	=> _e('Admin'),
+	        'title'	=> __('Advanced', 'wp_reading_list'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
+	        	
+	        	<b>Taxonomy Override</b>: Disable this to use your own files for "taxonomy-work-author.php" and "taxonomy-work-type.php" in your theme instead of the default files which come with the plugin.
+	        	
+	        	<br/><br/>
 
 			<b>Delete All</b>: If you would like to delete all of your Reading List items, select this option.  This deletes all works and authors but does not delete the feature images in the media library. 
 
@@ -196,11 +200,11 @@ function wprl_add_help_tab() {
 
 			<br/><br/>
 
-			This is the only way to delete all traces of this plugin from your database.  Deactivating and/or deleting the plugin only removes the plugin settings and does not delete your content.'). '</p>',
+			This is the only way to delete all traces of this plugin from your database.  Deactivating and/or deleting the plugin only removes the plugin settings and does not delete your content.', 'wp_reading_list'). '</p>',
 
 	    ) );
 
-}
+}                                    
 
 
 

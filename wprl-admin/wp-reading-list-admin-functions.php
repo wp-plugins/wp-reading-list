@@ -379,6 +379,19 @@ function wprl_settings_homepage() {
 }
 
 
+/*Override default theme taxonomy pages  */
+
+function wprl_settings_override_taxonomy() {
+
+     	$wprl_options = get_option('wprl_plugin_options');?>
+
+     	<input type="checkbox" id="wprl-options-override-taxonomy" name="wprl_plugin_options[override_theme_taxonomies]"<?php if($wprl_options['override_theme_taxonomies']){echo ('checked="checked"');} ?> value="taxonomy-override"/>
+
+	<?php echo('<p class="margin">');_e("Use the plugin's taxonomy pages for work authors and work types instead of your theme's pages", 'wprl_options' );echo ('</p>');
+
+}
+
+
 
 /*Show item author setting  */
 
@@ -709,6 +722,8 @@ function wprl_options_validate($input) {
          	$valid_input['show_url'] = wprl_options_validate_helper('show_url', $input);
 
          	$valid_input['show_single_work'] = wprl_options_validate_helper('show_single_work', $input);
+         	
+         	$valid_input['override_theme_taxonomies'] = wprl_options_validate_helper('override_theme_taxonomies', $input);
 
          	$valid_input['order'] = (array_key_exists($input['order'], $valid_order) ? $input['order'] : $valid_input['order'] );
 
@@ -798,13 +813,13 @@ function register_wprl_settings() {
 
 	add_settings_field('wprl_settings_list_size', 'Number of List Items', 'wprl_settings_list_size', 'wprl_options', 'wprl_settings_list_layout');
 
-	add_settings_field('wprl_settings_list_image', 'Show Cover Image', 'wprl_settings_list_image', 'wprl_options', 'wprl_settings_list_layout');
-
 	add_settings_field('wprl_settings_show_list_excerpt', 'Show Item Excerpt', 'wprl_settings_show_list_excerpt', 'wprl_options', 'wprl_settings_list_layout');
 
 	add_settings_field('wprl_settings_size', 'Cover Size', 'wprl_settings_size', 'wprl_options', 'wprl_settings_list_layout');
 
 	add_settings_section('wprl_settings_layout_dispay', 'Display', '', 'wprl_options');
+	
+	add_settings_field('wprl_settings_list_image', 'Show Cover Image', 'wprl_settings_list_image', 'wprl_options', 'wprl_settings_layout_dispay');
 
 	add_settings_field('wprl_settings_show_url', 'Show Cover Image Link', 'wprl_settings_show_url', 'wprl_options', 'wprl_settings_layout_dispay');
 
@@ -832,9 +847,11 @@ function register_wprl_settings() {
 
 	add_settings_field('wprl_settings_multiple', 'Layout Header', 'wprl_settings_multiple', 'wprl_options', 'wprl_settings_appearance');
 
-	add_settings_section('wprl_settings_admin', 'Admin', '', 'wprl_options');
+	add_settings_section('wprl_settings_advanced', 'Advanced', '', 'wprl_options');
+	
+	add_settings_field('wprl_settings_override_taxonomy', 'Taxonomy Override', 'wprl_settings_override_taxonomy', 'wprl_options', 'wprl_settings_advanced');
 
-	add_settings_field('wprl_settings_delete', 'Delete All', 'wprl_settings_delete', 'wprl_options', 'wprl_settings_admin');
+	add_settings_field('wprl_settings_delete', 'Delete All', 'wprl_settings_delete', 'wprl_options', 'wprl_settings_advanced');
 
 }
 

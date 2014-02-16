@@ -37,8 +37,8 @@ get_header(); ?>
 				$width = $wprl_options['grid_width'];
 
 				$padding = $wprl_options['padding']/2;
-
-				$width = $wprl_options['grid_width'];
+				
+				$previous_posts = (get_query_var('paged')-1)*$rows*$width;
 
 				$i = 1;
 
@@ -144,9 +144,8 @@ get_header(); ?>
 
 					</article><!-- #post-<?php the_ID(); ?> -->
 
-					<?php 
-
-					if ($i%$width === 0 || $post_counter === (int)$posts)
+					<?php 					
+					if ($i%$width === 0 || $post_counter + $previous_posts === (int)$posts)
 
 					{
 
@@ -270,7 +269,7 @@ get_header(); ?>
 
 										{ ?>
 
-											<p id="work-pages"><?php _e('Pages:', 'wp_reading_list'); echo (get_post_meta($metapost->ID,'wprl_pages',true));?></p>
+											<p id="work-pages"><?php _e('Pages: ', 'wp_reading_list'); echo (get_post_meta($metapost->ID,'wprl_pages',true));?></p>
 
 										<?php } 
 
@@ -278,7 +277,7 @@ get_header(); ?>
 
 										{ ?>
 
-											<p id="work-time"><?php _e('Posted on:', 'wp_reading_list'); echo (get_the_time(get_option('date_format'), $metapost->ID)); ?></p>
+											<p id="work-time"><?php _e('Posted on: ', 'wp_reading_list'); echo (get_the_time(get_option('date_format'), $metapost->ID)); ?></p>
 
 										<?php } 
 
@@ -286,7 +285,7 @@ get_header(); ?>
 
 										{ ?>
 
-											<p id="post-author"><?php _e('Posted by:', 'wp_reading_list');?> <a href="<?php echo (site_url());?>/author/<?php echo (the_author_meta('user_nicename', $metapost->post_author));?>"><?php echo(the_author_meta('user_nicename', $metapost->post_author));?></a></p>
+											<p id="post-author"><?php _e('Posted by: ', 'wp_reading_list');?> <a href="<?php echo (site_url());?>/author/<?php echo (the_author_meta('user_nicename', $metapost->post_author));?>"><?php echo(the_author_meta('user_nicename', $metapost->post_author));?></a></p>
 
 										<?php }
 
@@ -584,7 +583,7 @@ get_header(); ?>
 
 										{ ?>
 
-											<span id="work-time"><?php _e('Posted on:', 'wp_reading_list');echo (get_the_date(get_option('date_format'))); ?></span>
+											<span id="work-time"><?php _e('Posted on: ', 'wp_reading_list');echo (get_the_date(get_option('date_format'))); ?></span>
 
 										<?php } ?>	
 
@@ -600,7 +599,7 @@ get_header(); ?>
 
 										{ ?>
 
-											<span id="work-pages"><?php _e('Pages:', 'wp_reading_list'); echo (get_post_meta($post->ID,'wprl_pages',true));?></span>
+											<span id="work-pages"><?php _e('Pages: ', 'wp_reading_list'); echo (get_post_meta($post->ID,'wprl_pages',true));?></span>
 
 										<?php } ?>
 

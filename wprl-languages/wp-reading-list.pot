@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Reading List\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-reading-list\n"
-"POT-Creation-Date: 2014-02-16 09:59-0500\n"
-"PO-Revision-Date: 2014-02-16 10:00-0500\n"
+"POT-Creation-Date: 2014-02-16 12:44-0500\n"
+"PO-Revision-Date: 2014-02-16 12:44-0500\n"
 "Last-Translator: mstumpf <admin@mikestumpf.com>\n"
 "Language-Team: mstumpf <admin@mikestumpf.com>\n"
 "Language: en\n"
@@ -17,87 +17,114 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-KeywordsList: _;_e;_ngettext;_n;_ngettext_noop;_n_noop;_x;_nx;"
 "_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
-"esc_html_x\n"
+"esc_html_x;__\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: wprl-admin\n"
 "X-Poedit-SearchPath-2: wprl-core\n"
 "X-Poedit-SearchPath-3: wprl-theme\n"
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:307
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:307
 #: wprl-admin/wp-reading-list-admin-functions.php:307
 msgid ""
 "Sizes are enforced to a 3:4 aspect ratio and capped at a 600px by 800px "
 "maximum and 60px by 80px minimum."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:377
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:377
 #: wprl-admin/wp-reading-list-admin-functions.php:377
 msgid "Shows Reading List items on the homepage and in search results"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:463
-#: wprl-admin/wp-reading-list-admin-functions.php:463
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:390
+#: wprl-admin/wp-reading-list-admin-functions.php:390
+msgid ""
+"Use the plugin's taxonomy pages for work authors and work types instead of "
+"your theme's pages"
+msgstr ""
+
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:476
+#: wprl-admin/wp-reading-list-admin-functions.php:476
 msgid ""
 "(If you wish to enable this, it is recommended that you also turn on the "
 "\"Display on Whole Site\" setting)"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:515
-#: wprl-admin/wp-reading-list-admin-functions.php:515
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:528
+#: wprl-admin/wp-reading-list-admin-functions.php:528
 msgid ""
 "Everyone needs a fresh start sometimes.  Check if you would like to delete "
 "your Reading List items and authors. However, please realize that this is "
 "permanent; there is no way back."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:529
-#: wprl-admin/wp-reading-list-admin-functions.php:529
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:542
+#: wprl-admin/wp-reading-list-admin-functions.php:542
 msgid "What are you writing about? Notes, a review, fan fiction, ...?"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:543
-#: wprl-admin/wp-reading-list-admin-functions.php:543
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:556
+#: wprl-admin/wp-reading-list-admin-functions.php:556
 msgid "What do you want to call your list of items?"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:557
-#: wprl-admin/wp-reading-list-admin-functions.php:557
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:570
+#: wprl-admin/wp-reading-list-admin-functions.php:570
 msgid "Show up to 50 items in your list"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-functions.php:571
-#: wprl-admin/wp-reading-list-admin-functions.php:571
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:584
+#: wprl-admin/wp-reading-list-admin-functions.php:584
 msgid "Distance of the layout from the left of the screen"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-page.php:8
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:868
+#: wprl-admin/wp-reading-list-admin-functions.php:868
+msgid "Set featured image"
+msgstr ""
+
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:868
+#: wprl-admin/wp-reading-list-admin-functions.php:868
+msgid "Set cover image"
+msgstr ""
+
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:870
+#: wprl-admin/wp-reading-list-admin-functions.php:870
+msgid "Remove featured image"
+msgstr ""
+
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-functions.php:870
+#: wprl-admin/wp-reading-list-admin-functions.php:870
+msgid "Remove cover image"
+msgstr ""
+
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-page.php:8
 #: wprl-admin/wp-reading-list-admin-page.php:8
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-page.php:13
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-page.php:13
 #: wprl-admin/wp-reading-list-admin-page.php:13
 msgid "WP Reading List Settings"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-page.php:19
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-page.php:19
 #: wprl-admin/wp-reading-list-admin-page.php:19
 msgid "Save Settings"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin-page.php:20
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin-page.php:20
 #: wprl-admin/wp-reading-list-admin-page.php:20
 msgid "Reset Defaults"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:51
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:267
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:51
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:267
 #: wprl-admin/wp-reading-list-admin.php:51
 #: wprl-core/wp-reading-list-taxonomies.php:267
 msgid "WPRL Overview"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:53
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:53
 #: wprl-admin/wp-reading-list-admin.php:53
 msgid ""
 "<b>WP Reading List</b> (or, <b>WPRL</b>)is a plugin designed to help "
@@ -109,12 +136,12 @@ msgid ""
 "plugin."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:61
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:61
 #: wprl-admin/wp-reading-list-admin.php:61
 msgid "Layout"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:63
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:63
 #: wprl-admin/wp-reading-list-admin.php:63
 msgid ""
 "\n"
@@ -159,12 +186,12 @@ msgid ""
 "up-down space for the list layout.  <br/>Range: 1-10."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:89
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:89
 #: wprl-admin/wp-reading-list-admin.php:89
 msgid "Grid"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:91
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:91
 #: wprl-admin/wp-reading-list-admin.php:91
 msgid ""
 "\n"
@@ -182,12 +209,12 @@ msgid ""
 "\t\t\t<br/>Range: 1-10."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:109
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:109
 #: wprl-admin/wp-reading-list-admin.php:109
 msgid "List"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:111
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:111
 #: wprl-admin/wp-reading-list-admin.php:111
 msgid ""
 "\n"
@@ -218,12 +245,12 @@ msgid ""
 "\t        "
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:135
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:135
 #: wprl-admin/wp-reading-list-admin.php:135
 msgid "Display"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:137
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:137
 #: wprl-admin/wp-reading-list-admin.php:137
 msgid ""
 "*These options will affect both the archive layouts and the single item "
@@ -237,8 +264,8 @@ msgid ""
 "\n"
 "\t\t\t<br/><br/>\n"
 "\n"
-"\t\t\t<b>Show Link to Single Postb>: Check this option if you want to show a "
-"link to the single post view.  If you only wish to show the list of works "
+"\t\t\t<b>Show Link to Single Post</b>: Check this option if you want to show "
+"a link to the single post view.  If you only wish to show the list of works "
 "you read, like if you choose not to write anything in the post&apos;s "
 "content, this is a good option as it will only show the grid or list "
 "layout.\n"
@@ -268,12 +295,12 @@ msgid ""
 "\t        "
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:169
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:169
 #: wprl-admin/wp-reading-list-admin.php:169
 msgid "General"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:171
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:171
 #: wprl-admin/wp-reading-list-admin.php:171
 msgid ""
 "\n"
@@ -294,15 +321,21 @@ msgid ""
 "grid or list layout view is called."
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:189
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:189
 #: wprl-admin/wp-reading-list-admin.php:189
-msgid "Admin"
+msgid "Advanced"
 msgstr ""
 
-#: ../trunk/wprl-admin/wp-reading-list-admin.php:191
+#: ../wp-reading-list/wprl-admin/wp-reading-list-admin.php:191
 #: wprl-admin/wp-reading-list-admin.php:191
 msgid ""
 "\n"
+"\t        \t\n"
+"\t        \t<b>Taxonomy Override</b>: Disable this to use your own files for "
+"\"taxonomy-work-author.php\" and \"taxonomy-work-type.php\" in your theme "
+"instead of the default files which come with the plugin.\n"
+"\t        \t\n"
+"\t        \t<br/><br/>\n"
 "\n"
 "\t\t\t<b>Delete All</b>: If you would like to delete all of your Reading "
 "List items, select this option.  This deletes all works and authors but does "
@@ -319,26 +352,89 @@ msgid ""
 "settings and does not delete your content."
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-meta.php:21
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:295
-#: wprl-core/wp-reading-list-meta.php:21
+#: ../wp-reading-list/wprl-core/wp-reading-list-meta.php:41
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:295
+#: wprl-core/wp-reading-list-meta.php:41
 #: wprl-core/wp-reading-list-taxonomies.php:295
 msgid "Work URL"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-meta.php:29
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:313
-#: wprl-core/wp-reading-list-meta.php:29
+#: ../wp-reading-list/wprl-core/wp-reading-list-meta.php:57
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:313
+#: wprl-core/wp-reading-list-meta.php:57
 #: wprl-core/wp-reading-list-taxonomies.php:313
 msgid "Number of Pages"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-meta.php:40
-#: wprl-core/wp-reading-list-meta.php:40
+#: ../wp-reading-list/wprl-core/wp-reading-list-meta.php:79
+#: wprl-core/wp-reading-list-meta.php:79
 msgid "Add a link to the work"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:269
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:213
+#: wprl-core/wp-reading-list-taxonomies.php:213
+#, php-format
+msgid "Work updated. <a href=\"%s\">View Work</a>"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:215
+#: wprl-core/wp-reading-list-taxonomies.php:215
+msgid "Custom field updated."
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:217
+#: wprl-core/wp-reading-list-taxonomies.php:217
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:219
+#: wprl-core/wp-reading-list-taxonomies.php:219
+msgid "Work updated."
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:221
+#: wprl-core/wp-reading-list-taxonomies.php:221
+#, php-format
+msgid "Work restored to revision from %s"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:223
+#: wprl-core/wp-reading-list-taxonomies.php:223
+#, php-format
+msgid "Work published. <a href=\"%s\">View Work</a>"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:225
+#: wprl-core/wp-reading-list-taxonomies.php:225
+msgid "Work saved."
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:227
+#: wprl-core/wp-reading-list-taxonomies.php:227
+#, php-format
+msgid "Work submitted. <a target=\"_blank\" href=\"%s\">Preview Work</a>"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:229
+#: wprl-core/wp-reading-list-taxonomies.php:229
+#, php-format
+msgid ""
+"Scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
+"\">Preview Work</a>"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:231
+#: wprl-core/wp-reading-list-taxonomies.php:231
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:233
+#: wprl-core/wp-reading-list-taxonomies.php:233
+#, php-format
+msgid "Draft updated. <a target=\"_blank\" href=\"%s\">Preview Work</a>"
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:269
 #: wprl-core/wp-reading-list-taxonomies.php:269
 msgid ""
 "<b>WP Reading List</b> (or, <b>WPRL</b>) is a plugin designed to help "
@@ -348,12 +444,19 @@ msgid ""
 "visitors can find the piece."
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:277
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:269
+#: wprl-core/wp-reading-list-taxonomies.php:269
+msgid ""
+"Please select any of the other tabs to read more about the various "
+"administration functions available in this plugin."
+msgstr ""
+
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:277
 #: wprl-core/wp-reading-list-taxonomies.php:277
 msgid "Author/s"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:279
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:279
 #: wprl-core/wp-reading-list-taxonomies.php:279
 msgid ""
 "\n"
@@ -364,14 +467,14 @@ msgid ""
 "managed from the \"Authors\" tab under the \"Works\" tab in the admin menu."
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:285
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:285
 #: wprl-core/wp-reading-list-taxonomies.php:285
 msgid ""
 "Examples: \"William Shakespeare\", \"John\" \"Kate\" \"Will\", \"J.K. Rowling"
 "\""
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:297
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:297
 #: wprl-core/wp-reading-list-taxonomies.php:297
 msgid ""
 "\n"
@@ -386,7 +489,7 @@ msgid ""
 "make sure you have a cover image to link from!"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:303
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:303
 #: wprl-core/wp-reading-list-taxonomies.php:303
 msgid ""
 "Example: \"http://www.amazon.com/The-Riverside-Shakespeare-2nd-Edition/"
@@ -395,7 +498,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:315
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:315
 #: wprl-core/wp-reading-list-taxonomies.php:315
 msgid ""
 "\n"
@@ -405,22 +508,22 @@ msgid ""
 "\"210-450\".  Make sure you do not spell out the page number."
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:319
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:319
 #: wprl-core/wp-reading-list-taxonomies.php:319
 msgid "Examples: \"1\", \"999\""
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:321
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:321
 #: wprl-core/wp-reading-list-taxonomies.php:321
 msgid "Range: \"1-10000\"."
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:329
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:329
 #: wprl-core/wp-reading-list-taxonomies.php:329
 msgid "Cover Image"
 msgstr ""
 
-#: ../trunk/wprl-core/wp-reading-list-taxonomies.php:331
+#: ../wp-reading-list/wprl-core/wp-reading-list-taxonomies.php:331
 #: wprl-core/wp-reading-list-taxonomies.php:331
 msgid ""
 "\n"
@@ -430,60 +533,67 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../trunk/wprl-theme/archive-works.php:213
-#: ../trunk/wprl-theme/archive-works.php:523 wprl-theme/archive-works.php:213
-#: wprl-theme/archive-works.php:523
+#: ../wp-reading-list/wprl-theme/archive-works.php:212
+#: ../wp-reading-list/wprl-theme/archive-works.php:522
+#: ../wp-reading-list/wprl-theme/single-works.php:45
+#: wprl-theme/archive-works.php:212 wprl-theme/archive-works.php:522
+#: wprl-theme/single-works.php:45
 msgid "By: "
 msgstr ""
 
-#: ../trunk/wprl-theme/archive-works.php:273
-#: ../trunk/wprl-theme/archive-works.php:603
-#: ../trunk/wprl-theme/single-works.php:107 wprl-theme/archive-works.php:273
-#: wprl-theme/archive-works.php:603 wprl-theme/single-works.php:107
-msgid "Pages:"
+#: ../wp-reading-list/wprl-theme/archive-works.php:272
+#: ../wp-reading-list/wprl-theme/archive-works.php:602
+#: ../wp-reading-list/wprl-theme/single-works.php:107
+#: wprl-theme/archive-works.php:272 wprl-theme/archive-works.php:602
+#: wprl-theme/single-works.php:107
+msgid "Pages: "
 msgstr ""
 
-#: ../trunk/wprl-theme/archive-works.php:281
-#: ../trunk/wprl-theme/archive-works.php:587
-#: ../trunk/wprl-theme/single-works.php:115 wprl-theme/archive-works.php:281
-#: wprl-theme/archive-works.php:587 wprl-theme/single-works.php:115
-msgid "Posted on:"
+#: ../wp-reading-list/wprl-theme/archive-works.php:280
+#: ../wp-reading-list/wprl-theme/archive-works.php:586
+#: ../wp-reading-list/wprl-theme/single-works.php:115
+#: wprl-theme/archive-works.php:280 wprl-theme/archive-works.php:586
+#: wprl-theme/single-works.php:115
+msgid "Posted on: "
 msgstr ""
 
-#: ../trunk/wprl-theme/archive-works.php:289 wprl-theme/archive-works.php:289
-msgid "Posted by:"
-msgstr ""
-
-#: ../trunk/wprl-theme/archive-works.php:303
-#: ../trunk/wprl-theme/archive-works.php:637 wprl-theme/archive-works.php:303
-#: wprl-theme/archive-works.php:637
-msgid "Type: "
-msgstr ""
-
-#: ../trunk/wprl-theme/archive-works.php:615 wprl-theme/archive-works.php:615
+#: ../wp-reading-list/wprl-theme/archive-works.php:288
+#: ../wp-reading-list/wprl-theme/archive-works.php:614
+#: wprl-theme/archive-works.php:288 wprl-theme/archive-works.php:614
 msgid "Posted by: "
 msgstr ""
 
-#: ../trunk/wprl-theme/single-works.php:45 wprl-theme/single-works.php:45
-msgid "By:"
+#: ../wp-reading-list/wprl-theme/archive-works.php:302
+#: ../wp-reading-list/wprl-theme/archive-works.php:636
+#: wprl-theme/archive-works.php:302 wprl-theme/archive-works.php:636
+msgid "Type: "
 msgstr ""
 
-#: ../trunk/wprl-theme/single-works.php:123 wprl-theme/single-works.php:123
-msgid "Posted By:"
+#: ../wp-reading-list/wprl-theme/single-works.php:123
+#: wprl-theme/single-works.php:123
+msgid "Posted By: "
 msgstr ""
 
-#: ../trunk/wprl-theme/single-works.php:191 wprl-theme/single-works.php:191
-msgid "No Results:"
+#: ../wp-reading-list/wprl-theme/single-works.php:191
+#: wprl-theme/single-works.php:191
+msgid "No Results: "
 msgstr ""
 
-#: ../trunk/wprl-theme/taxonomy-work-author.php:27
-#: ../trunk/wprl-theme/taxonomy-work-type.php:53
+#: ../wp-reading-list/wprl-theme/taxonomy-work-author.php:27
+#: ../wp-reading-list/wprl-theme/taxonomy-work-type.php:53
 #: wprl-theme/taxonomy-work-author.php:27 wprl-theme/taxonomy-work-type.php:53
 msgid "Archive for"
 msgstr ""
 
-#: ../trunk/wprl-theme/taxonomy-work-author.php:149
-#: ../trunk/wprl-theme/taxonomy-work-type.php:297
+#: ../wp-reading-list/wprl-theme/taxonomy-work-author.php:115
+#: ../wp-reading-list/wprl-theme/taxonomy-work-type.php:229
+#: wprl-theme/taxonomy-work-author.php:115
+#: wprl-theme/taxonomy-work-type.php:229
+msgid "Edit"
+msgstr ""
+
+#: ../wp-reading-list/wprl-theme/taxonomy-work-author.php:149
+#: ../wp-reading-list/wprl-theme/taxonomy-work-type.php:297
 #: wprl-theme/taxonomy-work-author.php:149
 #: wprl-theme/taxonomy-work-type.php:297
 msgid "No Results"

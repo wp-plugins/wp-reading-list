@@ -264,9 +264,9 @@ function codex_custom_help_tab() {
 
 	        'id'	=> 'wprl_help_overview',
 
-	        'title'	=> _e('WPRL Overview'),
+	        'title'	=> __('WPRL Overview'),
 
-	        'content'	=> '<p>' . _e('<b>WP Reading List</b> (or, <b>WPRL</b>) is a plugin designed to help organize and display books, magazines, articles, and or anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.').'<br/><br/>'.__('Please select any of the other tabs to read more about the various administration functions available in this plugin.') . '</p>',
+	        'content'	=> '<p>' . __('<b>WP Reading List</b> (or, <b>WPRL</b>) is a plugin designed to help organize and display books, magazines, articles, and or anything else that you have read lately.  This plugin allows users to display what they have read, attach text like a review or notes to it, and provide a link to where visitors can find the piece.').'<br/><br/>'.__('Please select any of the other tabs to read more about the various administration functions available in this plugin.') . '</p>',
 
 	    ) );    
 
@@ -274,15 +274,15 @@ function codex_custom_help_tab() {
 
 	        'id'	=> 'wprl_help_author',
 
-	        'title'	=> _e('Author/s'),
+	        'title'	=> __('Author/s'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 This metabox allows you to add "authors" to your Reading List items.  You can add any number of authors, just like regular post tags; just separate them with commas.  These authors can then be shown in your layout and managed from the "Authors" tab under the "Works" tab in the admin menu.').'
 
 <br/>
 
-'._e('Examples: "William Shakespeare", "John" "Kate" "Will", "J.K. Rowling"'
+'.__('Examples: "William Shakespeare", "John" "Kate" "Will", "J.K. Rowling"'
 
 ) . '</p>',
 
@@ -292,15 +292,15 @@ This metabox allows you to add "authors" to your Reading List items.  You can ad
 
 	        'id'	=> 'wprl_help_url',
 
-	        'title'	=> _e('Work URL'),
+	        'title'	=> __('Work URL'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 This metabox allows you to add custom urls to link to external sources by wrapping the link around the posts&apos;s cover image.  Use this box to direct users to where the original Reading List item can be found or use it as a link for affiliate programs like <a href="https://affiliate-program.amazon.com/" target="_blank">Amazon Associates</a>.  Be sure to verify the link is correct and make sure you have the "Show Cover Image Links" setting turned on in the general "WP Reading List Settings" page.  Also, make sure you have a cover image to link from!').'
 
 </br>
 
-'._e('Example: "http://www.amazon.com/The-Riverside-Shakespeare-2nd-Edition/dp/0395754909/ref=sr_1_1?ie=UTF8&qid=1377294257&sr=8-1&keywords=shakespeare+riverside"
+'.__('Example: "http://www.amazon.com/The-Riverside-Shakespeare-2nd-Edition/dp/0395754909/ref=sr_1_1?ie=UTF8&qid=1377294257&sr=8-1&keywords=shakespeare+riverside"
 
 ') . '</p>',
 
@@ -310,15 +310,15 @@ This metabox allows you to add custom urls to link to external sources by wrappi
 
 	        'id'	=> 'wprl_help_pages',
 
-	        'title'	=> _e('Number of Pages'),
+	        'title'	=> __('Number of Pages'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 This metabox allows you to specify how many pages are in the Reading List item.  This plugin supports either individual numbers or page ranges, i.e. "210-450".  Make sure you do not spell out the page number.').'
 
-<br/>'._e('Examples: "1", "999"').'
+<br/>'.__('Examples: "1", "999"').'
 
-<br/>'._e('Range: "1-10000".') . '</p>',
+<br/>'.__('Range: "1-10000".') . '</p>',
 
 	    ) );
 
@@ -326,9 +326,9 @@ This metabox allows you to specify how many pages are in the Reading List item. 
 
 	        'id'	=> 'wprl_help_cover_image',
 
-	        'title'	=> _e('Cover Image'),
+	        'title'	=> __('Cover Image'),
 
-	        'content'	=> '<p>' . _e('
+	        'content'	=> '<p>' . __('
 
 This metabox allows you to set a featured image or "cover image" for your Reading List item.  This can then be shown in a Reading List layout.
 

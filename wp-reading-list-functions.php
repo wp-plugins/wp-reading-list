@@ -80,14 +80,16 @@ function wprl_default_options() {
 
 		'show_author_link' => true,
 
-		'version' => '2.0',
+		'version' => '2.2',
 
 		'show_list_excerpt' => true,
 
 		'show_work_type' => true,
 
 		'show_type_link' => true,
-
+		
+		'override_theme_taxonomies' => true,
+		
     	);
 
     	return $options;
@@ -102,12 +104,14 @@ global $wprl_options;
 
 $wprl_options = get_option('wprl_plugin_options');
 
-if (false == $wprl_options || $wprl_options['version'] != '2.0') 
-
+if (!$wprl_options) 
 {
-
 	$wprl_options = wprl_default_options();
-
+}
+elseif ($wprl_options['version'] != '2.2')
+{
+	$wprl_options_default = wprl_default_options();
+	$wprl_options = array_merge($wprl_options_default,$wprl_options);
 }
 
 update_option('wprl_plugin_options', $wprl_options);
@@ -211,12 +215,10 @@ if (!function_exists('wprl_styles'))
 {
 
 	function wprl_styles() {
-
+		$wprl_options = get_option('wprl_plugin_options');
 		if (is_post_type_archive('works') && !is_admin())
 
 		{
-
-			$wprl_options = get_option('wprl_plugin_options');
 
 			if ($wprl_options['layout']=='grid')
 
@@ -244,7 +246,7 @@ if (!function_exists('wprl_styles'))
 
 		}
 
-		elseif (!is_admin() && is_tax('work-author') || is_tax('work-type'))
+		elseif (!is_admin() && is_tax('work-author') || is_tax('work-type') && $wprl_options['override_theme_taxonomies'])
 
 		{
 
@@ -433,8 +435,7 @@ function wp_reading_list_redirect() {
 	if (isset($wp_query->query_vars["post_type"]))
 
 	{
-
-		if($wp_query->query_vars["post_type"] == 'works')
+		if($wp_query->query_vars["post_type"] == 'works' && $wprl_options['override_theme_taxonomies'])
 
 		{
 
@@ -460,23 +461,16 @@ function wp_reading_list_redirect() {
 
 		}
 
-	}
-
-    	elseif (isset($wp_query->query_vars["taxonomy"]))
-
-    	{
-
-    		if ($wp_query->query_vars["taxonomy"] == 'work-author') 
+    		elseif ($wp_query->query_vars["taxonomy"] == 'work-author' && $wprl_options['override_theme_taxonomies']) 
 
 		{
-
 		    $return_template = dirname( __FILE__ ) . '/wprl-theme/taxonomy-work-author.php';
 
 		    wprl_theme_redirect($return_template);
 
 		}
 
-		elseif ($wp_query->query_vars["taxonomy"] == 'work-type') 
+		elseif ($wp_query->query_vars["taxonomy"] == 'work-type' && $wprl_options['override_theme_taxonomies']) 
 
 		{
 
@@ -589,6 +583,7 @@ function wprl_rewrite_flush(){
 	$wp_rewrite->flush_rules();
 
 }
+
 
 /*
 

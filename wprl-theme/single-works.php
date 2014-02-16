@@ -42,7 +42,7 @@ get_header(); ?>
 
 									<?php if ($wprl_options['show_author']) { ?>
 
-										<span id="work-author" class="metaspan"><?php _e('By:', 'wp_reading_list'); if ($authorlist = get_the_terms($post->ID, 'work-author')){
+										<span id="work-author" class="metaspan"><?php _e('By: ', 'wp_reading_list'); if ($authorlist = get_the_terms($post->ID, 'work-author')){
 
 													$j=1;
 
@@ -72,7 +72,7 @@ get_header(); ?>
 
 															}
 
-															if ($wprl_options['author_link'])
+															if ($wprl_options['show_author_link'])
 
 															{ ?>
 
@@ -82,7 +82,7 @@ get_header(); ?>
 
 															echo(trim($author->name));
 
-															if ($wprl_options['author_link'])
+															if ($wprl_options['show_author_link'])
 
 															{ ?>
 
@@ -104,7 +104,7 @@ get_header(); ?>
 
 									{ ?>
 
-										<span id="work-pages" class="metaspan"><?php _e('Pages:', 'wp_reading_list'); echo(get_post_meta($post->ID,'wprl_pages',true));?></span>
+										<span id="work-pages" class="metaspan"><?php _e('Pages: ', 'wp_reading_list'); echo(get_post_meta($post->ID,'wprl_pages',true));?></span>
 
 									<?php }
 
@@ -112,7 +112,7 @@ get_header(); ?>
 
 									{ ?>
 
-											<span id="work-time" class="metaspan"><?php _e('Posted on:', 'wp_reading_list'); echo(the_date()); ?></span>
+											<span id="work-time" class="metaspan"><?php _e('Posted on: ', 'wp_reading_list'); echo(the_date()); ?></span>
 
 									<?php } 
 
@@ -120,7 +120,7 @@ get_header(); ?>
 
 									{ ?>
 
-										<span id="post-author" class="metaspan"><?php _e('Posted By:', 'wp_reading_list');?> <a href="<?php echo(site_url());?>/author/<?php echo(the_author_meta('user_nicename', $post->post_author));?>"><?php echo(the_author_meta('user_nicename', $post->post_author));?></a></span>
+										<span id="post-author" class="metaspan"><?php _e('Posted By: ', 'wp_reading_list');?> <a href="<?php echo(site_url());?>/author/<?php echo(the_author_meta('user_nicename', $post->post_author));?>"><?php echo(the_author_meta('user_nicename', $post->post_author));?></a></span>
 
 									<?php }	
 
@@ -188,7 +188,7 @@ get_header(); ?>
 
 		else{ ?>
 
-			<h2 class="entry-header"><?php _e('No Results:', 'wp_reading_list');?></h2>
+			<h2 class="entry-header"><?php _e('No Results: ', 'wp_reading_list');?></h2>
 
 		<?php } ?>
 
