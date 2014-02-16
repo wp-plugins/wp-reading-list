@@ -4,7 +4,7 @@ Donate link: http://mikestumpf.com/portfolio/wordpress-reading-list-plugin/
 Tags: reading-list, works, custom-post, plugin, posts, images, links, reading list, books, magazines, articles, journals, reading
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 2.1
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,8 +63,8 @@ Yes. Think of "works" as specialized "posts" and similarly of "authors" & "types
 
 4. Author View
 
-== Changelog ==
-
+== Changelog === 2.1 =
+*Added further language support
 = 2.1 =
 *Fixed bug which did not show the last row of details in the grid view
 *Added multi-language support
