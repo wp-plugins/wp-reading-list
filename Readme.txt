@@ -68,6 +68,7 @@ Yes. Think of "works" as specialized "posts" and similarly of "authors" & "types
 = 2.2 =
 *Fixed bug in grid view for paginated views
 *Fixed bugs resulting from adding language support
+*Added way to update database without removing previous settings in admin panel
 
 = 2.1.1 =
 *Added further language support
